@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 2,
   "functions": {
     "api/mcp.ts": {
       "runtime": "@vercel/node@3.2.29",
