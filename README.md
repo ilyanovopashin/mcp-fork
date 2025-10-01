@@ -227,6 +227,38 @@ npm install
 npm run start:streamableHttp
 ```
 
+## Deploying to Vercel
+
+This repository contains a preconfigured Vercel serverless function that exposes the streamable HTTP transport at `/mcp`.
+
+1. Install dependencies:
+   ```shell
+   npm install
+   ```
+2. Deploy with the Vercel CLI (requires a logged-in Vercel account):
+   ```shell
+   npx vercel deploy --prod
+   ```
+
+After deployment you can connect an MCP client by pointing it at the HTTPS endpoint Vercel provides, for example:
+
+```json
+{
+  "servers": {
+    "everything": {
+      "transport": {
+        "type": "streamable-http",
+        "url": "https://your-vercel-deployment.vercel.app/mcp"
+      }
+    }
+  }
+}
+```
+
+The provided `vercel.json` file routes `/mcp` requests to the function at `api/mcp.ts`, so no additional configuration is required beyond the standard Vercel project setup.
+
+> **Note:** The deployment pins the function runtime to `@vercel/node@3.2.29` in `vercel.json` to satisfy Vercel's requirement that every runtime declaration includes an explicit version. Update this value when newer runtime releases become available.
+
 ## Running as an installed package
 ### Install 
 ```shell
