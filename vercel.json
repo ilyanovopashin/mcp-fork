@@ -3,6 +3,7 @@
   "functions": {
     "api/mcp.ts": {
       "runtime": "@vercel/node@3.2.29",
+
       "maxDuration": 60,
       "memory": 1024
     }
