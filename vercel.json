@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 2,
   "functions": {
     "api/mcp.ts": {
       "runtime": "nodejs20.x",
@@ -7,10 +7,7 @@
       "memory": 1024
     }
   },
-  "rewrites": [
-    {
-      "source": "/mcp",
-      "destination": "/api/mcp"
-    }
+  "routes": [
+    { "src": "/mcp", "dest": "/api/mcp" }
   ]
 }
