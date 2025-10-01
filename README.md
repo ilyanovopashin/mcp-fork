@@ -257,6 +257,9 @@ After deployment you can connect an MCP client by pointing it at the HTTPS endpo
 
 The provided `vercel.json` file routes `/mcp` requests to the function at `api/mcp.ts`, so no additional configuration is required beyond the standard Vercel project setup.
 
+
+> **Note:** The deployment pins the function runtime to `@vercel/node@3.2.29` in `vercel.json` to satisfy Vercel's requirement that every runtime declaration includes an explicit version. Update this value when newer runtime releases become available.
+
 ## Running as an installed package
 ### Install 
 ```shell
